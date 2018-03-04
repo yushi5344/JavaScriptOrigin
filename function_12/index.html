@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /**
+     *
+     function box(n1,n2) {
+        return n1+n2;
+    }
+     alert(box(1,2));
+
+     function box() {
+        return 10;
+        return 100;//当遇到第一个return时，就停止执行。
+       }
+     function box() {
+        return arguments[0]+arguments[1];//可实现一个动态加载功能
+    }
+     alert(box('111','333'));
+
+
+     */
+
+    function box() {
+//        return arguments.length;
+        var sum=0;
+        for(var i=0;i<arguments.length;i++){
+            sum+=arguments[i];
+        }
+        return sum;
+    }
+    alert(box(1,2,3,4,5,6));
+</script>
