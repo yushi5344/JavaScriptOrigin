@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>流程控制语句</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+
+    /**
+     *
+     var box=100;
+     if(box){
+        alert('box是真');
+    }else{
+        alert('box是假');
+    }
+     var box=100;
+     if(box>=100){
+      alert('甲');
+      }else if (box>=90){
+          alert('乙');
+      }else if (box>=70){
+          alert('丙');
+      }
+     var box=1;
+     switch (box){
+      case 1:
+          alert('one');
+          break;
+      case 2:
+          alert('two');
+          break;
+      case 3:
+          alert('three');
+          break;
+      default:
+          alert('出错');
+        }
+     var box=1;
+     do{
+        console.log(box);
+        box++;
+    }while (box<=5);//先执行，再判断 当while判断为false的时候 退出循环
+     //如果条件一开始不满足，至少执行一次
+
+     var box=10;
+     while(box>20){
+
+    }
+     for(var box=1;box<=10;box++){
+        console.log(box);
+    }
+     var box={
+        'name':'Lee',
+        'age':28,
+        'height':173,
+        'sex':'Male'
+    };
+     for(var x in box){
+        console.log(x);
+    }
+     for(var box=0;box<10;box++){
+        if(box==4){
+            continue;
+        }
+        console.log(box)
+    }
+
+
+     */
+
+    var box={
+        'name':'Lee',
+        'age':28,
+        'height':173,
+        'sex':'Male'
+    };
+
+    with (box){
+        var n=box.name;
+    }
+    console.log(n);
+</script>
