@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间与日期</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    function conso(data) {
+        console.log(data);
+    }
+    /**
+     *
+     var box=new Date();
+     conso(box);//Mon Mar 05 2018 21:31:49 GMT+0800 (中国标准时间)
+     conso(Date.parse('4/12/2007'))//1176307200000  返回日期的毫秒数
+     conso(new Date('dflsfk|2112'));//Invalid Date
+     conso(new Date('May 25,2007'));
+     conso(new Date('January 31,2007'));
+     conso(new Date('January 32,2008'));//Invalid Date
+     conso(Date.UTC(2018,3));//1522540800000
+
+     var box=new Date(2007,10,14,17,22,45);
+     conso(box);
+     conso('toString'+box.toString());//toStringWed Nov 14 2007 17:22:45 GMT+0800 (中国标准时间)
+     conso('toLocalString'+box.toLocaleString());//toLocalString2007/11/14 下午5:22:45
+     conso('ValueOf'+box.valueOf())//ValueOf1195032165000
+
+
+     var box=new Date();
+     conso(box.toDateString());//Mon Mar 05 2018
+     conso(box.toTimeString());//21:52:17 GMT+0800 (中国标准时间)
+     conso(box.toLocaleDateString());//2018/3/5
+     conso(box.toLocaleTimeString());//下午9:52:17
+     conso(box.toUTCString());//Mon, 05 Mar 2018 13:52:17 GMT
+
+     */
+
+
+    var box=new Date(2007,10,14,17,22,45);
+    conso(box.getFullYear());//2007
+    conso(box.getMonth());//10 第10个月 也就是11月
+    conso(box.getDate());//14
+    conso(box.getTime());//1195032165000
+    conso(box.getHours());//17
+    conso(box.getMinutes());//22
+    conso(box.getTimezoneOffset());//-480  本地时间和UTC时间相差分钟数
+
+
+</script>
