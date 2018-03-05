@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    /**
+     *
+     var box=new RegExp('Box','gi');
+     console.log(box);
+
+     var pattern=/Box/i;
+     console.log(pattern.test('box'));//true
+     var str='This is a box';
+     console.log(pattern.test(str));//true
+
+     var pattern=/Box/i;
+     var str='box';
+     console.log(pattern.exec(str));//["box", index: 0, input: "box"]
+     var str1='pox';
+     console.log(pattern.exec(str1));//null
+
+     var pattern=/Box/i;
+     var str="This is a Box,that is a Box!";
+     console.log(str.match(pattern)); //array
+     console.log(str.search(pattern));//10
+     console.log(str.replace(pattern,'Tom'));//This is a Tom,that is a Box!
+     console.log(str.split(pattern));//["This is a ", ",that is a ", "!"]
+
+     var pattern=/google/i;
+     var str='This is a google';
+     pattern.test(str);
+     console.log(RegExp.input);//This is a google
+     console.log(RegExp.leftContext);//This is a
+     console.log(RegExp.rightContext);// 空
+     console.log(RegExp.lastMatch);//
+     console.log(RegExp.lastParen);//google
+
+     var pattern=/g.gle/;
+     var str='ggle';
+     console.log(pattern.test(str));//false
+     console.log(pattern.test('glgle'));//true
+
+
+     var pattern=/g*gle/;
+     var str='ggle';
+     console.log(pattern.test(str));//true  * 零个或多个
+
+     var pattern=/g+gle/;
+     var str='ggle';
+     console.log(pattern.test(str));//true  + 一 个或多个
+
+     var pattern=/g?gle/;
+     var str='ggle';
+     console.log(pattern.test(str));//true  ? 匹配零个或一个前导字符串
+
+
+     var pattern=/go{2,4}gle/;
+     var str='gooogle';
+     console.log(pattern.test(str));//true 2到4个前导字符串
+
+     var pattern=/go{2,}gle/;
+     var str='gooooooogle';
+     console.log(pattern.test(str));//true 大于2个前导字符串
+
+
+     var pattern=/[a-z]oogle/;
+     var str='google';
+     console.log(pattern.test(str));//true [a-z]  26个小写字母
+
+     var pattern=/[0-9]oogle/;
+     var str='6oogle';
+     console.log(pattern.test(str));//true [0-9]  10个数字
+
+     var pattern=/[^A-Z0-9]oogle/;
+     var str='aoogle';
+     console.log(pattern.test(str));//true 非A-Z，0-9之间的值
+
+     var pattern=/[^A-Z0-9]oogle/;
+     var str='aoogle';
+     console.log(pattern.test(str));//true 非A-Z，0-9之间的值
+
+
+     var pattern=/^[0-9]oogle/;
+     var str='111oogle';
+     console.log(pattern.test(str));//false 强制从头开始匹配
+
+     var pattern=/^[0-9]oogle/;
+     var str='111oogle';
+     console.log(pattern.test(str));//false 强制从头开始匹配
+
+     var pattern=/\woogle/;
+     var str='1oogle';
+     console.log(pattern.test(str));//true \w匹配A-Z a-z
+
+     var pattern=/\Woogle/;
+     var str='1oogle';
+     console.log(pattern.test(str));//true \W匹配非 A-Z a-z
+
+     var pattern=/^google$/;
+     var str='ggoogle5';
+     console.log(pattern.test(str));//false 强制首尾匹配
+
+     var pattern=/go\sogle/;
+     var str='go ogle';
+     console.log(pattern.test(str));//true \s空格匹配
+     var pattern=/google\b/;
+     var str='google';
+     console.log(pattern.test(str));//true \b  到达边界
+
+     var pattern=/(google){4,8}$/;
+     var str='googlegooglegooglegooglegoogle';
+     console.log(pattern.test(str));//true  分组
+
+     var pattern=/8(.*)8/;
+     var str='This is 8kjljkl8';
+     console.log(str.match(pattern))
+     console.log(str.replace(pattern,'<strong>$1</strong>'))
+
+
+     var pattern=/(.*)\s(.*)/;
+     var str="baidu google";
+     console.log(str.replace(pattern,'$2 $1'));//google baidu  位置交换
+     */
+
+    var pattern=/8(.*)8/;//使用了贪婪模式
+    var str="8google8 8google8 8google8";
+    console.log(str.replace(pattern,'<strong>$1<strong>'));//<strong>google8 8google8 8google<strong>
+
+    var pattern=/8(.*?)8/g;//惰性
+    var str="8google8 8google8 8google8";
+    console.log(str.replace(pattern,'<strong>$1<strong>'));//<strong>google<strong> <strong>google<strong> <strong>google<strong>
+
+</script>
