@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间与日期</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    function conso(data) {
+        console.log(data);
+    }
+    /**
+     *
+
+     */
+    var box=new Date();
+    conso(box);//Mon Mar 05 2018 21:31:49 GMT+0800 (中国标准时间)
+    conso(Date.parse('4/12/2007'))//1176307200000  返回日期的毫秒数
+    conso(new Date('dflsfk|2112'));//Invalid Date
+    conso(new Date('May 25,2007'));
+    conso(new Date('January 31,2007'));
+    conso(new Date('January 32,2008'));//Invalid Date
+    conso(Date.UTC(2018,3));//1522540800000
+</script>
