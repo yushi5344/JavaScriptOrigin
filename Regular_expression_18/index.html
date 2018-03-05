@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    /**
+     *
+     var box=new RegExp('Box','gi');
+     console.log(box);
+
+     var pattern=/Box/i;
+     console.log(pattern.test('box'));//true
+     var str='This is a box';
+     console.log(pattern.test(str));//true
+
+     */
+    var pattern=/Box/i;
+    var str='box';
+    console.log(pattern.exec(str));//["box", index: 0, input: "box"]
+    var str1='pox';
+    console.log(pattern.exec(str1));//null
+
+</script>
