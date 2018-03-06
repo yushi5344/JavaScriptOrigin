@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function类型</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //将一个函数作为参数传递给另一个函数
+    function box(sum,num) {
+        return sum(num);
+    }
+    function sum(num) {
+        return num+10;
+    }
+    var result=box(sum,20);
+    console.log(result);//30
+</script>
