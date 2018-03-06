@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量，作用域和内存</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    /**
+     *
+     var box=new Object();
+     box.name='Lee';
+     var box2=box;
+     box2.name='zhang';
+     console.log(box.name)
+     console.log(box2.name)//传引用   都改变了
+     ECMAScript中 所有的函数的参数都是按值传递的
+
+     function box(num){
+        return num+10;
+    }
+     var num=50;
+     console.log(box(50));//60
+     console.log(num);//50
+
+     //这里将要传递一个引用类型的参数，但是不是安引用传递，而是按值传递
+     function box(obj) {
+        obj.name='Lee';
+    }
+     var obj=new Object();
+     box(obj);
+     console.log(obj.name)//lee
+
+     */
+
+    //instanceof检测类型
+    var box=[1,2,3,4];
+    console.log(box instanceof Array);//true
+
+</script>
