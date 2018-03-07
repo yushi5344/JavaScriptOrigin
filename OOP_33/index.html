@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象和原型</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /**
+     *
+     var box=new Object();
+     box.name='Lee';
+     box.age=29;
+     box.run=function () {
+       return this.name+this.age+'运行中';
+   }
+     console.log(box.run);
+     console.log(box.run())
+
+
+     */
+
+    function createObject(name,age) {
+        var obj=new Object();
+        obj.name=name;
+        obj.age=age;
+        obj.run=function () {
+            return this.name+this.age+'运行中';
+        }
+        return obj;
+    }
+    var box1=createObject('Lee',100);
+    var  box2=createObject('Jack',200);
+    console.log(box1);
+    console.log(box2);
+
+
+</script>
