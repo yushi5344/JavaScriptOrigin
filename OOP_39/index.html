@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象和原型</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /**
+     *
+     var box=new Object();
+     box.name='Lee';
+     box.age=29;
+     box.run=function () {
+       return this.name+this.age+'运行中';
+    }
+     console.log(box.run);
+     console.log(box.run())
+
+     function createObject(name,age) {
+        var obj=new Object();
+        obj.name=name;
+        obj.age=age;
+        obj.run=function () {
+            return this.name+this.age+'运行中';
+        }
+        return obj;
+    }
+     var box1=createObject('Lee',100);
+     var  box2=createObject('Jack',200);
+     console.log(box1);
+     console.log(box2);
+
+
+
+     function Box(name,age) {
+        this.name=name;
+        this.age=age;
+        this.run=function () {
+            return this.name+this.age+'运行中';
+        }
+    }
+     var box1=new Box('Lee',22);
+     var box2=new Box('Jack',33);
+     console.log(box1);
+     console.log(box2);
+     console.log(box1.run());//lee 28运行中
+     console.log(box1 instanceof Box);//true
+     console.log(box2 instanceof Box);//true
+     console.log(box1.run==box2.run)//false  判断的是引用地址
+     //原型
+     function Box(){}//构造函数函数体内什么都没有，这里如果有，叫实例属性，实例方法
+     Box.prototype.name='Lee';
+     Box.prototype.age=22;
+     Box.prototype.run=function () {
+        return this.name+this.age+'运行中';
+    }
+     var box1=new Box();
+     //如果是实例方法，不同的实例化，他们的方法地址是不一样的，是唯一的
+     //如果是原型方法，那么他们的地址是共享的，
+     console.log(box1.constructor);
+     //实例属性不会共享
+
+
+     function BOX() {
+
+    }
+     //使用字面量的方式创建原型对象 这里{}就是对象，是Object
+     BOX.prototype={
+        name:'Lee',
+        age:29,
+        run:function () {
+            return this.age+this.name+'运行中';
+        },
+        constructor:BOX
+    };
+     var box=new BOX();
+     //    alert(BOX.run());
+     //    alert(box.constructor);//function Object() { [native code] }
+
+
+     var pox=[1,2,4,5,6,7];
+     //查看sort是否是Array原型对象中的方法
+     console.log(Array.prototype.sort)
+     String.prototype.addString=function () {
+        return this+'被添加了';
+    }
+     var str='Lee';
+     console.log(str.addString())//Lee被添加了
+
+     //原型的缺点
+     function box() {
+
+    }
+     box.prototype={
+        constructor:box,
+        name:'Lee',
+        age:28,
+        family:['哥哥','姐姐','妹妹'],
+        run:function () {
+            return this.name+this.age+'运行中';
+        }
+    }
+     var box1=new box();
+     console.log(box1.family);//["哥哥", "姐姐", "妹妹"]
+     box1.family.push('弟弟');
+     console.log(box1.family);// ["哥哥", "姐姐", "妹妹", "弟弟"]
+     var box2=new box();
+     console.log(box2.family);//["哥哥", "姐姐", "妹妹", "弟弟"]
+     //box2共享了box1的属性
+
+
+     //组合构造函数+原型模式
+     function box(name,age) {
+        this.name=name;
+        this.age=age;
+        this.family=["哥哥", "姐姐", "妹妹"];
+    }
+
+     box.prototype={
+        constructor:box,
+        run:function () {
+            return this.name+this.age+'运行中';
+        }
+    }
+
+     var box1=new box('lee',22);
+     console.log(box1.family);//["哥哥", "姐姐", "妹妹"]
+     box1.family.push('弟弟');
+     console.log(box1.family);//["哥哥", "姐姐", "妹妹", "弟弟"]
+     var box2=new box('Jace',33);
+     console.log(box2.family);//["哥哥", "姐姐", "妹妹"]
+
+     //继承，通过原型链实现
+     function box() {
+        this.name='Lee';
+    }
+     function desk() {
+        this.age=100;
+    }
+     function table() {
+        this.level='AAA';
+    }
+     //通过原型链继承，超类型实例化后的对象实例，赋值给子类型的原型属性
+     desk.prototype=new box();
+     table.prototype=new desk();
+     var desk1=new desk();
+     console.log(desk1.level);
+
+
+
+     //原型式继承，
+     //临时中转函数
+     function obj(o) {
+        function F() {}//一个临时新建的对象
+        F.prototype=o;
+        return new F();
+    }
+
+     //这是字面量的声明方式，相当于var box=new Box()
+     var box={
+        name:'Lee',
+        age:100,
+        family:['a','b','v']
+    }
+     var box1=obj(box)
+     alert(box1.family);
+     box1.family.push('c');
+     var box2=obj(box);
+     alert(box2.family);
+
+
+     //寄生式继承=原型+工厂模式
+     //临时中转函数
+     function obj(o) {
+        function F() {}//一个临时新建的对象
+        F.prototype=o;
+        return new F();
+    }
+
+     //寄生函数
+     function create(o) {
+        var f=obj(o);
+        f.run=function () {
+            return this.name;
+        }
+        return f;
+    }
+
+
+     //这是字面量的声明方式，相当于var box=new Box()
+     var box={
+        name:'Lee',
+        age:100,
+        family:['a','b','v']
+    }
+
+     var box1=create(box);
+     alert(box1.run());
+
+     */
+
+
+
+
+</script>
