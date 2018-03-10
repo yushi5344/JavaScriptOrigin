@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器检测</title>
+    <script src="../node_modules/browser-detect/dist/browser-detect.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /**
+     //浏览器检测
+     //    alert(window.navigator);
+
+     alert(navigator.appName);//Chrome Netscape firefox:Netscape
+     alert(navigator.appCodeName)
+     */
+
+
+    //操作系统版本
+    var result = browser();
+    console.log(result);
+    //{name: "chrome", version: "64.0.3282", versionNumber: 64.03282, mobile: false, os: "Windows 10"}
+    //Object { name: "firefox", version: "58.0.0", versionNumber: 58, mobile: false, os: "Windows 10" }
+    //{mobile: false, name: "ie", os: "Windows 10", version: "11.0.0", versionNumber: 11}
+
+
+    //插件检测
+    for(var i=0;i<navigator.plugins.length;i++){
+        document.write('插件名'+navigator.plugins[i].name+'<br/>');
+    }
+</script>
