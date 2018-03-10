@@ -1,0 +1,26 @@
+{
+  "name": "javascriptorigin",
+  "version": "1.0.0",
+  "description": "learning javascript",
+  "main": "index.js",
+  "dependencies": {
+    "browser-detect": "^0.2.22"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yushi5344/JavaScriptOrigin.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "yushi5344@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yushi5344/JavaScriptOrigin/issues"
+  },
+  "homepage": "https://github.com/yushi5344/JavaScriptOrigin#readme"
+}
