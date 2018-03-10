@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器检测</title>
+    <script src="../node_modules/browser-detect/dist/browser-detect.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /**
+     //浏览器检测
+     //    alert(window.navigator);
+
+     alert(navigator.appName);//Chrome Netscape firefox:Netscape
+     alert(navigator.appCodeName)
+
+
+     //操作系统版本
+     var result = browser();
+     console.log(result);
+     //{name: "chrome", version: "64.0.3282", versionNumber: 64.03282, mobile: false, os: "Windows 10"}
+     //Object { name: "firefox", version: "58.0.0", versionNumber: 58, mobile: false, os: "Windows 10" }
+     //{mobile: false, name: "ie", os: "Windows 10", version: "11.0.0", versionNumber: 11}
+
+
+     //插件检测
+     for(var i=0;i<navigator.plugins.length;i++){
+        document.write('插件名'+navigator.plugins[i].name+'<br/>');
+    }
+
+
+
+     */
+//用户代理检测
+    console.log(navigator.userAgent);
+//Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36
+//Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0
+//Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; InfoPath.3;
+
+</script>
