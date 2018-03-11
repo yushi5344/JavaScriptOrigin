@@ -23,7 +23,7 @@
 
      var pattern=/Box/i;
      var str='box';
-     console.log(pattern.exec(str));//["box", index: 0, input: "box"]
+     console.log(pattern.exec(str));//["box", index.html: 0, input: "box"]
      var str1='pox';
      console.log(pattern.exec(str1));//null
 
@@ -140,21 +140,21 @@
      var pattern=/^[a-z]+\s[0-9]{4}$/;
      var str='google 2010';
      var a=pattern.exec(str);
-     console.log(a);//["google 2010", index: 0, input: "google 2010"]
+     console.log(a);//["google 2010", index.html: 0, input: "google 2010"]
      console.log(a[0]);//google 2010
 
 
      var pattern=/(\d+)([a-z])/;
      var str='123abc';
      var a=pattern.exec(str);
-     console.log(a);// ["123a", "123", "a", index: 0, input: "123abc"]
+     console.log(a);// ["123a", "123", "a", index.html: 0, input: "123abc"]
      console.log(a[0]);//123a
      console.log(a[1]);//123
 
      var pattern=/(\d+)(?:[a-z])/;
      var str='123abc';
      var a=pattern.exec(str);
-     console.log(a);// ["123a", "123", index: 0, input: "123abc"]
+     console.log(a);// ["123a", "123", index.html: 0, input: "123abc"]
      console.log(a[0]);//123a
      console.log(a[1]);//123
 
